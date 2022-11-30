@@ -1,0 +1,23 @@
+{
+  "name": "orangehrm",
+  "version": "1.0.0",
+  "description": "Proyecto Final - Automatización de la web OrangeHRM",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "cy:open": "cypress open"
+  },
+  "keywords": [
+    "idcas",
+    "cypress",
+    "javascript"
+  ],
+  "author": "Grupo #3: Danny Peguero, Francisco Rosario, Hector Jr. Caba",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0"
+  },
+  "devDependencies": {
+    "cypress": "^10.10.0"
+  }
+}
