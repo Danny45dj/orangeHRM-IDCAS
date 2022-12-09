@@ -1,2 +1,13 @@
-.env
-node_modules/
+# Ignore all .env files
+*.env*
+
+# Large media files
+*.mp4
+*.tiff
+*.avi
+*.flv
+*.mov
+*.wmv
+
+# Node artifact files
+node_modules
