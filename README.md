@@ -1,5 +1,5 @@
-# Proyecto OrangeHRM
+# Project OrangeHRM
 
-## Proyecto hecho en Cypress
+## Project Made in Cypress
 
 ``` npm install ```
