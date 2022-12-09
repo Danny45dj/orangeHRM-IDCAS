@@ -1,0 +1,10 @@
+{
+    "name": "Francisco",
+    "secondName": "Rosario",
+    "lastNam": "Berroa",
+    "emailCan": "francisco@gmail.com",
+    "contactNum": "8095522132",
+    "keywords": "Hello, testing, this",
+    "noteText": "Applying to this vacance",
+    "invalidEmail": "frangmail.com"
+}
