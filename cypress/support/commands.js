@@ -1,4 +1,4 @@
-import LoginPage from "../e2e/Components/LoginPage";
+import loginPage from "../e2e/pages/loginPage";
 
 Cypress.Commands.add('login', (username, password) => {
     loginPage.usernameInput().should('be.empty').type(username);
@@ -8,15 +8,6 @@ Cypress.Commands.add('login', (username, password) => {
 
 Cypress.Commands.add('hasText', (element, text) => {
     element.should('have.text', text);
-})
-
-Cypress.Commands.add('login',()=>{
-    cy.fixture('users').then(user=>{
-        LoginPage.UserInput().type(user[0].username)
-        LoginPage.passwordInput().type(user[0].password)
-    })
-
-    LoginPage.submit().click()
 })
 
 Cypress.Commands.add('hasAttr', (element, href) => {

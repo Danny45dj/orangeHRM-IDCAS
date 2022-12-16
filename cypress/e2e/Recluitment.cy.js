@@ -1,15 +1,17 @@
 import ErrorMessage from "./Components/ErrorMessage";
-import LoginPage from "./Components/LoginPage"
+import RecluitmentPage from "./Components/RecluitmentPage"
 import RegisterCandidatesPage from "./Components/RegisterCandidatesPage";
 describe('New cantidates', () => {
     beforeEach (()=>{
         cy.visit('/login');
-        cy.login();
-        LoginPage.recluitmentSubmit().click()
-        LoginPage.AddCandidatesSubmit().click()
+        cy.fixture('users').then((user) => {
+            cy.login(user[0].username,user[0].password);
+        });
+        RecluitmentPage.recluitmentSubmit().click()
+        RecluitmentPage.AddCandidatesSubmit().click()
     })
 
-    it.only(('Adding candidates with all fields complete'),()=>{
+    it(('Adding candidates with all fields complete'),()=>{
 
         cy.fixture('formfixtures').then(names =>{
             RegisterCandidatesPage.fistName().type(names.name)
