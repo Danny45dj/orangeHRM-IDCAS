@@ -9,7 +9,7 @@ describe('New cantidates', () => {
         LoginPage.AddCandidatesSubmit().click()
     })
 
-    it(('Adding candidates with all fields complete'),()=>{
+    it.only(('Adding candidates with all fields complete'),()=>{
 
         cy.fixture('formfixtures').then(names =>{
             RegisterCandidatesPage.fistName().type(names.name)
@@ -18,9 +18,9 @@ describe('New cantidates', () => {
             RegisterCandidatesPage.vacancy()
             RegisterCandidatesPage.emailCandidate().type(names.emailCan)
             RegisterCandidatesPage.contactNumber().type(names.contactNum)
-//            RegisterCandidatesPage.resume().selectFile('cypress/e2e/pdf.pdf')
+            RegisterCandidatesPage.resume().selectFile('cypress/e2e/Components/pdf.pdf', {force: true})
             RegisterCandidatesPage.keywords().type(names.keywords)
-//            RegisterCandidatesPage.dateOfApplication()
+            RegisterCandidatesPage.dateOfApplication().clear().type(names.date)
             RegisterCandidatesPage.notes().type(names.noteText)       
             RegisterCandidatesPage.consent().click()
             RegisterCandidatesPage.saveSubmit().click()
@@ -48,13 +48,36 @@ describe('New cantidates', () => {
 
     })
 
-    it.only(('Adding candidate without first name'), ()=>{
+    it(('Adding candidate without last name'), ()=>{
+        cy.fixture('formfixtures').then(names =>{
+            RegisterCandidatesPage.fistName().should('be.empty').type(names.name)
+            RegisterCandidatesPage.emailCandidate().should('be.empty').type(names.emailCan)
+            RegisterCandidatesPage.saveSubmit().click()
+            ErrorMessage.checkError2(ErrorMessage.errorNot.recluitmentError.nameReq)
+        })
+
+    })
+
+
+    it(('Adding candidate with invalid email'), ()=>{
         cy.fixture('formfixtures').then(names =>{
             RegisterCandidatesPage.fistName().should('be.empty').type(names.name)
             RegisterCandidatesPage.lastName().should('be.empty').type(names.lastNam)
             RegisterCandidatesPage.emailCandidate().should('be.empty').type(names.invalidEmail)
             RegisterCandidatesPage.saveSubmit().click()
             ErrorMessage.checkEmailError(ErrorMessage.errorNot.recluitmentError.emailInvalidNotif)
+        })
+
+    })
+
+    it(('Adding candidate with invalid contact number format'), ()=>{
+        cy.fixture('formfixtures').then(names =>{
+            RegisterCandidatesPage.fistName().should('be.empty').type(names.name)
+            RegisterCandidatesPage.lastName().should('be.empty').type(names.lastNam)
+            RegisterCandidatesPage.emailCandidate().should('be.empty').type(names.emailCan)
+            RegisterCandidatesPage.contactNumber().type(names.wrongContactFormat)
+            RegisterCandidatesPage.saveSubmit().click()
+            ErrorMessage.invalidContactFormat(ErrorMessage.errorNot.recluitmentError.contactInvalidFormat)
         })
 
     })

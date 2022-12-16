@@ -30,7 +30,7 @@ const keywords = () =>{
 }
 
 const dateOfApplication = () =>{
-    return cy.get('.oxd-input oxd-input--#app > div.oxd-layout > div.oxd-layout-container > div.oxd-layout-context > div > div > form > div:nth-child(5) > div > div:nth-child(2) > div > div:nth-child(2) > div > div > input')
+    return cy.get('.oxd-date-input > .oxd-input')
 }
 
 const notes = () =>{
