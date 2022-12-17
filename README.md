@@ -1,11 +1,14 @@
-# Proyect OrangeHRM
+# Project OrangeHRM
 
-## Proyect made in Cypress
+## Project Made in Cypress
 
 ``` npm install ```
 
-## Run
+## Run in browser
 ``` npm run cy:open ```
+
+## Run in terminal or command line
+``` npm run test ```
 
 
 ## BY IDCAS!!
