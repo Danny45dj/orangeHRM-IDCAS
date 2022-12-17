@@ -1,5 +1,11 @@
-# Proyecto OrangeHRM
+# Proyect OrangeHRM
 
-## Proyecto hecho en Cypress
+## Proyect made in Cypress
 
 ``` npm install ```
+
+## Run
+``` npm run cy:open ```
+
+
+## BY IDCAS!!

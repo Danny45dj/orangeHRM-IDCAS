@@ -11,7 +11,7 @@ describe('New cantidates', () => {
         RecluitmentPage.AddCandidatesSubmit().click()
     })
 
-    it(('Adding candidates with all fields complete'),()=>{
+    it.only(('Adding candidates with all fields complete'),()=>{
 
         cy.fixture('formfixtures').then(names =>{
             RegisterCandidatesPage.fistName().type(names.name)
@@ -20,7 +20,7 @@ describe('New cantidates', () => {
             RegisterCandidatesPage.vacancy()
             RegisterCandidatesPage.emailCandidate().type(names.emailCan)
             RegisterCandidatesPage.contactNumber().type(names.contactNum)
-            RegisterCandidatesPage.resume().selectFile('cypress/e2e/Components/pdf.pdf', {force: true})
+            RegisterCandidatesPage.resume().selectFile(names.fileAddress, {force: true})
             RegisterCandidatesPage.keywords().type(names.keywords)
             RegisterCandidatesPage.dateOfApplication().clear().type(names.date)
             RegisterCandidatesPage.notes().type(names.noteText)       
