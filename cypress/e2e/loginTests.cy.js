@@ -91,4 +91,4 @@ describe('Login Tests', () => {
         resetPasswordPage.resetCancelButton().should('be.visible').click();
         cy.url().should('include', pages.enumPages.LOGIN);
     });
-})
+});
