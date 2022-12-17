@@ -8,5 +8,6 @@
     "noteText": "Applying to this vacance",
     "invalidEmail": "frangmail.com",
     "wrongContactFormat": "dwda4526",
-    "date": "2020-11-07"
+    "date": "2020-11-07",
+    "fileAddress": "cypress/e2e/Components/pdf.pdf"
 }
